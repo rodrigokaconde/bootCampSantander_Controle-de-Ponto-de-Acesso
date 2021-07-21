@@ -2,6 +2,9 @@ package br.com.yahoo.rodrigokaconde.projeto.model;
 
 import lombok.*;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.time.LocalDateTime;
 
 @Getter //metodos gettes da classe
@@ -10,8 +13,11 @@ import java.time.LocalDateTime;
 @NoArgsConstructor //construtor sem paramentro
 @EqualsAndHashCode
 @Builder
+@Entity
 public class Calendario {
-    private long id;
+    @Id
+    private Long id;
+    @ManyToOne
     private TipoData tipoData;
     private String descricao;
     private LocalDateTime dataEspecial;

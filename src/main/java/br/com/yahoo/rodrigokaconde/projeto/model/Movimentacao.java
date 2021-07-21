@@ -3,8 +3,7 @@ package br.com.yahoo.rodrigokaconde.projeto.model;
 import lombok.*;
 import org.apache.tomcat.jni.Local;
 
-import javax.persistence.Embeddable;
-import javax.persistence.EmbeddedId;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -15,6 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor //construtor sem paramentro
 @EqualsAndHashCode
 @Builder
+@Entity
 public class Movimentacao {
 
     @AllArgsConstructor //contrutor com parametro
@@ -22,14 +22,17 @@ public class Movimentacao {
     @EqualsAndHashCode
     @Embeddable //
     public class MovimentacaoId implements Serializable{
-        private long idMovimento;
-        private long idUsuario;
+        private Long idMovimento;
+        private Long idUsuario;
     }
+    @Id
     @EmbeddedId
     private MovimentacaoId id;
     private LocalDateTime dataEntrada;
     private LocalDateTime dataSaida;
     private BigDecimal periodo;
+    @ManyToOne
     private Ocorrencia ocorrencia;
+    @ManyToOne
     private Calendario calendario;
 }

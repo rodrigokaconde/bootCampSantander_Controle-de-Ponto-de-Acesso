@@ -2,9 +2,10 @@ package br.com.yahoo.rodrigokaconde.projeto.model;
 
 import lombok.*;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter //metodos gettes da classe
@@ -13,8 +14,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor //construtor sem paramentro
 @EqualsAndHashCode
 @Builder
+@Entity
 public class Usuario {
-    private long id;
+    @Id
+    private Long id;
     @ManyToOne
     private CategoriaUsuario categoriaUsuario;
     private String nome;
