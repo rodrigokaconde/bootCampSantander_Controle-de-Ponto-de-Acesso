@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -49,7 +48,6 @@ public class JornadaTrabalhoController {
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
-
         return (ResponseEntity<JornadaTrabalho>) ResponseEntity.ok();
     }
 
