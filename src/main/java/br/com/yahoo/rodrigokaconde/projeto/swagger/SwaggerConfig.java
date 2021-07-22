@@ -40,12 +40,12 @@ class SwaggerConfig {
     @Bean
     public ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("API-REST")
+                .title("API-REST - BootCamp Santander - Controle de Ponto de Acesso")
                 .description("Projeto desenvolvido para BootCamp Santander")
                 .version("1.0.0")
                 .license("Apache License Version 2.0")
                 .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0")
-                .contact(new Contact("Rodrigo", "https://web.digitalinnovation.one", "rodrigokaconde@yahoo.com.br"))
+                .contact(new Contact("Rodrigo", "https://github.com/rodrigokaconde", "rodrigokaconde@yahoo.com.br"))
                 .build();
     }
 }
