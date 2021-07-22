@@ -29,7 +29,7 @@ public class JornadaService {
         return jornadaRepository.findById(idJornada);
     }
 
-    public JornadaTrabalho UpdateJornada(JornadaTrabalho jornadaTrabalho){
+    public JornadaTrabalho updateJornada(JornadaTrabalho jornadaTrabalho){
         return jornadaRepository.save(jornadaTrabalho);
     }
 

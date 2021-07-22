@@ -27,19 +27,18 @@ public class JornadaTrabalhoController {
     }
 
     @GetMapping("/{idJornada}")
-    public ResponseEntity<JornadaTrabalho> getJornadaListById(@PathVariable("IdJornada")Long idJornada) throws Exception{
+    public ResponseEntity<JornadaTrabalho> getJornadaListById(@PathVariable("IdJornada")Long idJornada)
+            throws Exception{
         return ResponseEntity.ok(jornadaService.getById(idJornada).orElseThrow(() -> new Exception("Jornada não encontrada.")));
     }
 
     @PutMapping("/{idJornada}")
-    public ResponseEntity<JornadaTrabalho> UpdateJornada
-            (@PathVariable("idJornada") Long idJornada, @Valid @RequestBody JornadaTrabalho jornadaDetalhes)
+    public ResponseEntity<JornadaTrabalho> updateJornada(@PathVariable("idJornada") Long idJornada)
             throws Exception {
         JornadaTrabalho jornada = jornadaService.getById(idJornada)
-                .orElseThrow(() -> new NoSuchElementException("Dado não encontrado!!!"));
-        jornada.setDescricao(jornadaDetalhes.getDescricao());
+                .orElseThrow(() -> new NoSuchElementException("Jornada não encontarda"));
 
-        final JornadaTrabalho jornadaModificada = jornadaService.UpdateJornada(jornada);
+        JornadaTrabalho jornadaModificada = jornadaService.updateJornada(jornada);
         return ResponseEntity.ok(jornadaModificada);
     }
 
