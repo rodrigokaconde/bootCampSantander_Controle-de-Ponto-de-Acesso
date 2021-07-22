@@ -25,6 +25,7 @@
 #### JDBC URL: jdbc:h2:file:~/dio
 #### User Name: sa
 #### Password: 
+#### Documentação Swagger pode ser acessada em http://localhost:8081/swagger-ui.html
 
 ====================================================
 #### Rodrigo Fernandes de Oliveira
