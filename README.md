@@ -4,10 +4,11 @@
 
 ### Tecnologias utilizadas :computer:
 - Java
-- Sptring Boot
+- Spring Boot
 - Hibernate
 - Lombok
 - Swagger
+- JPA
 
 ### Pré-requisitos :white_check_mark:
 - Java 11
